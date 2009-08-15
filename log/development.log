@@ -92,3 +92,8 @@ Processing ProductsController#index (for 127.0.0.1 at 2009-08-03 09:06:49) [GET]
 Rendering template within layouts/products
 Rendering products/index
 Completed in 61ms (View: 54, DB: 2) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (5.9ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20090802111842)
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
