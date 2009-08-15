@@ -97,3 +97,153 @@ Completed in 61ms (View: 54, DB: 2) | 200 OK [http://localhost/products]
   [4;36;1mSQL (5.9ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
 Migrating to CreateProducts (20090802111842)
   [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20090802111842)
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20090802111842)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (191.5ms)[0m   [0mDROP TABLE "products"[0m
+  [4;36;1mSQL (9.7ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090802111842'[0m
+  [4;35;1mSQL (22.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20090802111842)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (188.9ms)[0m   [0;1mCREATE TABLE "products" ("id" serial primary key, "title" character varying(255), "description" text, "image_url" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (6.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090802111842')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-15 15:50:22) [GET]
+
+ActionController::RoutingError (No route matches "/depot" with {:method=>:get}):
+  thin (1.0.0) lib/thin/connection.rb:63:in `pre_process'
+  thin (1.0.0) lib/thin/connection.rb:54:in `process'
+  thin (1.0.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run_machine'
+  eventmachine (0.12.6) lib/eventmachine.rb:240:in `run'
+  thin (1.0.0) lib/thin/backends/base.rb:57:in `start'
+  thin (1.0.0) lib/thin/server.rb:150:in `start'
+  thin (1.0.0) lib/thin/controllers/controller.rb:80:in `start'
+  thin (1.0.0) lib/thin/runner.rb:173:in `send'
+  thin (1.0.0) lib/thin/runner.rb:173:in `run_command'
+  thin (1.0.0) lib/thin/runner.rb:139:in `run!'
+  thin (1.0.0) bin/thin:6
+  /opt/local/bin/thin:19:in `load'
+  /opt/local/bin/thin:19
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-08-15 15:50:36) [GET]
+  [4;36;1mProduct Load (10.8ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 34ms (View: 17, DB: 11) | 200 OK [http://localhost/products]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2009-08-15 15:50:38) [GET]
+Rendering template within layouts/products
+Rendering products/new
+Completed in 51ms (View: 42, DB: 0) | 200 OK [http://localhost/products/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2009-08-15 15:51:14) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"49VFRztcAMdv2+rZhdWsDZFd1ZuiW7uiUhg9owd0abA=", "product"=>{"image_url"=>"http://www.yahoo.co.jp/_ylh=X3oDMTB0NWxnaGxsBF9TAzIwNzcyOTYyNjUEdGlkAzEyBHRtcGwDZ2Ex/r/mlg", "title"=>"New one ", "description"=>"Hello world. This is a new description for the new product."}}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "products" ("created_at", "title", "image_url", "updated_at", "description") VALUES('2009-08-15 06:51:14.267248', E'New one ', E'http://www.yahoo.co.jp/_ylh=X3oDMTB0NWxnaGxsBF9TAzIwNzcyOTYyNjUEdGlkAzEyBHRtcGwDZ2Ex/r/mlg', '2009-08-15 06:51:14.267248', E'Hello world. This is a new description for the new product.') RETURNING "id"[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/products/1
+Completed in 47ms (DB: 2) | 302 Found [http://localhost/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2009-08-15 15:51:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Load (0.7ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 15ms (View: 5, DB: 1) | 200 OK [http://localhost/products/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-08-15 15:51:21) [GET]
+  [4;35;1mProduct Load (1.8ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 13ms (View: 7, DB: 2) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2009-08-15 15:51:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/products/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20090802111842)
+Migrating to AddPriceToProduct (20090815070018)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20090802111842)
+Migrating to AddPriceToProduct (20090815070018)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (33.0ms)[0m   [0;1mALTER TABLE "products" ADD COLUMN "price" decimal(8,2)[0m
+  [4;35;1mSQL (28.4ms)[0m   [0mALTER TABLE "products" ALTER COLUMN "price" SET DEFAULT 0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090815070018')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2009-08-15 16:09:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 13ms (View: 3, DB: 1) | 200 OK [http://localhost/products/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-08-15 16:09:46) [GET]
+  [4;36;1mProduct Load (1.8ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 16ms (View: 11, DB: 2) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20090802111842)
+Migrating to AddPriceToProduct (20090815070018)
+Migrating to AddTestData (20090815071712)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Delete all (0.8ms)[0m   [0;1mDELETE FROM "products" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
