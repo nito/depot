@@ -709,3 +709,12 @@ Processing StoreController#index (for 127.0.0.1 at 2009-08-16 19:30:26) [GET]
   [4;36;1mProduct Load (2.8ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
 Rendering store/index
 Completed in 17ms (View: 8, DB: 3) | 200 OK [http://localhost/store]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-08-16 19:45:57) [GET]
+  [4;35;1mProduct Load (2.7ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 18ms (View: 11, DB: 3) | 200 OK [http://localhost/store]
