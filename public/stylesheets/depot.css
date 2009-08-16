@@ -124,6 +124,7 @@ h1 {
 #store .entry img {
   width: 75px;
   float: left;
+  border: 0;
 }
 
 

@@ -1,11 +1,11 @@
 <h1>Your Pragmatic Catalog</h1>
 <% for product in @products -%>
   <div class="entry">
-    <%= image_tag(product.image_url) %>
+    <%= link_to image_tag(product.image_url) , :action => :add_to_cart, :id => product %>
     <h3><%=h product.title %></h3>
     <%= product.description %>
     <div class="price-line">
-      <span class="price"><%= number_to_currency(product.price) %></span>
+      <span class="price"><%= number_to_currency( product.price*100, :unit => "&yen;" , :precision => 0 ) %></span>
       <%= button_to "Add to Cart" %>
     </div>
   </div>
