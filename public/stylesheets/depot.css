@@ -309,3 +309,14 @@ h1 {
   color: #bfb;
   font-size: small;
 }
+
+#side time {
+  color: #bfb;
+  font-size: small;
+}
+
+
+#store .entry form, #store .entry form div {
+  display: inline;
+}
+
