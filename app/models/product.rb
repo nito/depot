@@ -1,4 +1,9 @@
 class Product < ActiveRecord::Base
+  def self.find_products_for_sale
+    find(:all, :order => "title")
+    #find(:all, :order => "id")
+  end
+
   validates_presence_of :title, :description, :image_url, :message => '空であってはなりません'
   validates_length_of :title, :minimum => 10, :message => "最低10文字入力して下さい"
   validates_numericality_of :price
