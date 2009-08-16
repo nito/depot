@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
   validates_presence_of :title, :description, :image_url
+  validates_length_of :title, :minimum => 10, :message => "最低10文字入力して下さい"
   validates_numericality_of :price
   validate :price_must_be_at_least_a_cent
   validates_uniqueness_of :title
