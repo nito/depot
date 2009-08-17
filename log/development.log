@@ -2242,3 +2242,75 @@ Processing StoreController#index (for 127.0.0.1 at 2009-08-17 11:05:30) [GET]
 Rendering template within layouts/store
 Rendering store/index
 Completed in 20ms (View: 12, DB: 3) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-08-17 11:19:55) [GET]
+  [4;36;1mProduct Load (2.8ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 23ms (View: 15, DB: 3) | 200 OK [http://localhost/store]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-08-17 11:20:02) [GET]
+  [4;35;1mProduct Load (2.8ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 19ms (View: 12, DB: 3) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-08-17 11:20:11) [GET]
+  [4;36;1mProduct Load (2.8ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 21ms (View: 14, DB: 3) | 200 OK [http://localhost/store]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-08-17 11:22:11) [GET]
+  [4;35;1mProduct Load (2.9ms)[0m   [0mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 23ms (View: 15, DB: 3) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-08-17 11:22:13) [GET]
+  [4;36;1mProduct Load (2.7ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 20ms (View: 13, DB: 3) | 200 OK [http://localhost/store]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing StoreController#add_to_cart (for 127.0.0.1 at 2009-08-17 11:22:37) [POST]
+  Parameters: {"authenticity_token"=>"9EqINr73AbnMx6jDV2oBHoCWeO+Yj3DkeYT8JGpnOzs=", "id"=>"5"}
+  [4;35;1mProduct Load (0.7ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 5) [0m
+Rendering template within layouts/store
+Rendering store/add_to_cart
+Completed in 24ms (View: 8, DB: 1) | 200 OK [http://localhost/store/add_to_cart/5]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing StoreController#empty_cart (for 127.0.0.1 at 2009-08-17 11:22:41) [POST]
+  Parameters: {"authenticity_token"=>"9EqINr73AbnMx6jDV2oBHoCWeO+Yj3DkeYT8JGpnOzs="}
+Redirected to http://localhost:3000/store
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/store/empty_cart]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-08-17 11:22:41) [GET]
+  [4;36;1mProduct Load (2.8ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 88ms (View: 80, DB: 3) | 200 OK [http://localhost/store]

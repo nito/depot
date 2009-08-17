@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-  <title>Pragprog Books Online Store : You have made <%= @count %> visits to the site</title>
+<title>Pragprog Books Online Store <% unless @count <= 5 %> : You have made <%= @count %> visits to the site<% end %></title>
 <!-- START:stylesheet -->
   <%= stylesheet_link_tag "depot", :media => "all" %><!-- <label id="code.slt"/> -->
 <!-- END:stylesheet -->
@@ -22,7 +22,9 @@
       <!-- Code added by nito@gilt.jp 2009/08/16 -->
       <time><%= @time %></time><br />
       <!-- Code added by nito@gilt.jp 2009/08/17 -->
+      <% unless @count <= 5 %>
       <count>Visits made by you: <%= @count %></count><br />
+      <% end %>
     </div>
     <div id="main">
       <% if flash[:notice] -%>
