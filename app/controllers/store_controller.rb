@@ -1,7 +1,15 @@
 class StoreController < ApplicationController
   def index
     @products = Product.find_products_for_sale
+    # code added by nito@gilt.jp 2009/08/16
     @time = Time.now.strftime "%Y/%m/%d %H:%M"
+    # code added by nito@gilt.jp 2009/08/17
+    @count = increment_count
+  end
+
+  def increment_count
+    session[:counter] ||= 0
+    session[:counter] += 1
   end
 
   def add_to_cart

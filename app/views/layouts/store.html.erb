@@ -19,7 +19,10 @@
       <a href="http://www..../faq">Questions</a><br />
       <a href="http://www..../news">News</a><br />
       <a href="http://www..../contact">Contact</a><br />
-      <time><%= @time %></time>
+      <!-- Code added by nito@gilt.jp 2009/08/16 -->
+      <time><%= @time %></time><br />
+      <!-- Code added by nito@gilt.jp 2009/08/17 -->
+      <count>Visits made by you: <%= @count %></count><br />
     </div>
     <div id="main">
       <% if flash[:notice] -%>

@@ -311,7 +311,14 @@ h1 {
   font-size: small;
 }
 
+/** Code added by nito@gilt.jp 2009/08/16 **/
 #side time {
+  color: #bfb;
+  font-size: small;
+}
+
+/** Code added by nito@gilt.jp 2009/08/17 **/
+#side count {
   color: #bfb;
   font-size: small;
 }
