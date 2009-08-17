@@ -16,6 +16,7 @@ class StoreController < ApplicationController
     product = Product.find(params[:id])
     @cart = find_cart
     @cart.add_product(product)
+    @count = session[:counter] = 0
   rescue ActiveRecord::RecordNotFound
     logger.error("Attempt to access invalid product #{params[:id]}")
     flash[:notice] = "Invalid product"
