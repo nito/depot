@@ -2197,3 +2197,12 @@ Processing StoreController#index (for 127.0.0.1 at 2009-08-17 10:31:39) [GET]
 Rendering template within layouts/store
 Rendering store/index
 Completed in 31ms (View: 18, DB: 3) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-08-17 10:45:15) [GET]
+  [4;36;1mProduct Load (2.8ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 27ms (View: 16, DB: 3) | 200 OK [http://localhost/store]
