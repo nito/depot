@@ -1,7 +1,12 @@
 <h1>Your Pragmatic Catalog</h1>
 <% for product in @products -%>
   <div class="entry">
-    <%= link_to image_tag(product.image_url) , :action => :add_to_cart, :id => product %>
+    <!--%= link_to image_tag(product.image_url) , :action => :add_to_cart, :id => product %-->
+    <!--%= link_to_remote(image_tag(product.image_url),{:url => { :action => :add_to_cart, :id => product }}, :href => url_for(:action => :add_to_cart, :id => product)) %-->
+    <% form_remote_tag :url => { :action => :add_to_cart, :id => product } do %>
+      <%= image_submit_tag(product.image_url, :alt => product.title, :title => "Add to cart", :class => "product_picture") -%>
+    <% end %>
+
     <h3><%=h product.title %></h3>
     <%= product.description %>
     <div class="price-line">

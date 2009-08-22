@@ -18,19 +18,25 @@ class StoreController < ApplicationController
     product = Product.find(params[:id])
     @cart = find_cart
     @current_item = @cart.add_product(product)
-    respond_to do |format|
+    respond_to do  |format|
       format.js if request.xhr?
       format.html {redirect_to_index}
     end
     @count = session[:counter] = 0
   rescue ActiveRecord::RecordNotFound
     logger.error("Attempt to access invalid product #{params[:id]}")
-    redirect_to_index("Invalid product")
+    #redirect_to_index("Invalid product")
+    redirect_to :action => 'index'
   end
 
   def empty_cart
     session[:cart] = nil
-    redirect_to_index("Your cart is currently empty")
+    respond_to do |format|
+      format.js if request.xhr?
+      format.html {redirect_to_index}
+    end
+#    redirect_to_index unless request.xhr?
+#    redirect_to_index("Your cart is currently empty")
 #    flash[:notice] = "Your cart is currently empty"
 #    redirect_to :action => 'index'
   end
