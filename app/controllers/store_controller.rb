@@ -5,6 +5,8 @@ class StoreController < ApplicationController
     @time = Time.now.strftime "%Y/%m/%d %H:%M"
     # code added by nito@gilt.jp 2009/08/17
     @count = increment_count
+    # code added by nito@gilt.jp 2009/08/22
+    @cart = find_cart
   end
 
   def increment_count
@@ -17,6 +19,7 @@ class StoreController < ApplicationController
     @cart = find_cart
     @cart.add_product(product)
     @count = session[:counter] = 0
+    redirect_to_index
   rescue ActiveRecord::RecordNotFound
     logger.error("Attempt to access invalid product #{params[:id]}")
     flash[:notice] = "Invalid product"
@@ -31,8 +34,8 @@ class StoreController < ApplicationController
   end
 
 private
-def redirect_to_index(msg)
-  flash[:notice] = msg
+def redirect_to_index(msg = nil)
+  flash[:notice] = msg if msg
   redirect_to :action => 'index'
 end
 
