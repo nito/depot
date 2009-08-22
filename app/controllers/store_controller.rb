@@ -19,7 +19,8 @@ class StoreController < ApplicationController
     @cart = find_cart
     @current_item = @cart.add_product(product)
     respond_to do |format|
-      format.js
+      format.js if request.xhr?
+      format.html {redirect_to_index}
     end
     @count = session[:counter] = 0
   rescue ActiveRecord::RecordNotFound
