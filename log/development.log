@@ -2314,3 +2314,21 @@ Processing StoreController#index (for 127.0.0.1 at 2009-08-17 11:22:41) [GET]
 Rendering template within layouts/store
 Rendering store/index
 Completed in 88ms (View: 80, DB: 3) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-08-21 20:05:05) [GET]
+  [4;36;1mProduct Load (120.5ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 304ms (View: 32, DB: 137) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing StoreController#index (for 127.0.0.1 at 2009-08-22 14:20:31) [GET]
+  [4;36;1mProduct Load (3.0ms)[0m   [0;1mSELECT * FROM "products" ORDER BY title[0m
+Rendering template within layouts/store
+Rendering store/index
+Completed in 160ms (View: 39, DB: 5) | 200 OK [http://localhost/store]
