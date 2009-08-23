@@ -30,10 +30,32 @@ class StoreController < ApplicationController
 
   def empty_cart
     session[:cart] = nil
-    redirect_to_index("Your cart is currently empty")
-#    flash[:notice] = "Your cart is currently empty"
-#    redirect_to :action => 'index'
+    redirect_to :action => 'index'
   end
+
+  def checkout
+    @count = session[:counter] = 0
+    @cart = find_cart
+    if @cart.items.empty?
+      redirect_to_index("Your cart is empty")
+    else
+      @order = Order.new
+    end
+  end
+
+  def save_order
+    @count = session[:counter] = 0
+    @cart = find_cart
+    @order = Order.new(params[:order])
+    @order.add_line_items_from_cart(@cart)
+    if @order.save
+      session[:cart] = nil
+      redirect_to_index("Thank you for your order")
+    else
+      render :action => 'checkout'
+    end
+  end
+
 
 private
 def redirect_to_index(msg = nil)
