@@ -4070,3 +4070,57 @@ Rendering template within layouts/store
 Rendering store/index
 Rendered store/_cart (0.8ms)
 Completed in 26ms (View: 14, DB: 5) | 200 OK [http://localhost/store]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20090802111842)
+Migrating to AddPriceToProduct (20090815070018)
+Migrating to AddTestData (20090815071712)
+Migrating to CreateSessions (20090816120553)
+Migrating to CreateOrders (20090822132448)
+Migrating to CreateLineItems (20090822132533)
+Migrating to CreateUsers (20090823102701)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (35.2ms)[0m   [0;1mCREATE TABLE "users" ("id" serial primary key, "name" character varying(255), "hashed_password" character varying(255), "salt" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090823102701')[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-08-23 20:06:55) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 29ms (View: 14, DB: 2) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-08-23 20:07:08) [POST]
+  Parameters: {"commit"=>"Add User", "authenticity_token"=>"wrZBKz7jNvKbV75KlnDwrpC6Wz6fpWIkmBL3VszNhno=", "user"=>{"name"=>"nito", "password_confirmation"=>"password", "password"=>"password"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.8ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."name" = E'nito') LIMIT 1[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mINSERT INTO "users" ("name", "salt", "created_at", "updated_at", "hashed_password") VALUES(E'nito', E'206864500.314503965975115', '2009-08-23 11:07:08.153762', '2009-08-23 11:07:08.153762', E'1f671a50f1cd37e174d3e8536c7439aede58d3f8') RETURNING "id"[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed in 33ms (DB: 7) | 302 Found [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-08-23 20:07:08) [GET]
+  [4;35;1mUser Load (3.1ms)[0m   [0mSELECT * FROM "users" ORDER BY name[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 31ms (View: 15, DB: 5) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-08-23 20:07:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 21ms (View: 7, DB: 2) | 200 OK [http://localhost/users/1]
